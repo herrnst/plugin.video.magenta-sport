@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.magenta-sport" version="1.2.8" name="Magenta Sport" provider-name="asciidisco">
+<addon id="plugin.video.magenta-sport" version="1.2.8" name="Magenta Sport" provider-name="Maven85">
     <requires>
         <import addon="xbmc.python" version="2.24.0"/>
         <import addon="script.module.pydes" version="2.0.1"/>
@@ -29,7 +29,7 @@
         <license>MIT</license>
         <website>https://www.magentasport.de/</website>
         <email>public at asciidisco dot com</email>
-        <source>https://github.com/asciidisco/plugin.video.telekom-sport</source>
+        <source>https://github.com/Maven85/plugin.video.magenta-sport</source>
         <forum>https://www.kodinerds.net/index.php/Thread/57586-PreRelease-Telekom-Sport/</forum>
         <news>v1.2.8 (2018-11-01):
 - Adds issue template [skip ci]
