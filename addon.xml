@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.magenta-sport" version="1.2.8" name="Magenta Sport" provider-name="Maven85">
+<addon id="plugin.video.magenta-sport" version="1.2.9" name="Magenta Sport" provider-name="Maven">
     <requires>
         <import addon="xbmc.python" version="2.24.0"/>
         <import addon="script.module.pydes" version="2.0.1"/>
         <import addon="script.module.beautifulsoup4" version="4.3.2"/>
         <import addon="script.module.requests" version="2.12.4"/>
         <import addon="script.module.inputstreamhelper" version="0.3.3"/>
+        <import addon="script.module.kodi-six" version="0.1.0"/>
     </requires>
     <extension point="xbmc.python.pluginsource" library="addon.py">
         <provides>video</provides>
@@ -28,13 +29,7 @@
         <platform>all</platform>
         <license>MIT</license>
         <website>https://www.magentasport.de/</website>
-        <email>public at asciidisco dot com</email>
-        <source>https://github.com/Maven85/plugin.video.magenta-sport</source>
-        <forum>https://www.kodinerds.net/index.php/Thread/57586-PreRelease-Telekom-Sport/</forum>
-        <news>v1.2.8 (2018-11-01):
-- Adds issue template [skip ci]
-- Adds restructured test & yaml linter
-- Update Session.py. fixes asciidisco/plugin.video.telekom-sport/issues/7
-- Fixes linting issues in yml files</news>
+        <email>janis dot semper at googlemail dot com</email>
+        <source>https://github.com/kodinerds/repo/plugin.video.magenta-sport</source>
     </extension>
 </addon>
