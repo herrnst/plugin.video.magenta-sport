@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.magenta-sport" version="1.2.9" name="Magenta Sport" provider-name="Maven">
+<addon id="plugin.video.magenta-sport" version="1.2.10" name="Magenta Sport" provider-name="Maven">
     <requires>
-        <import addon="xbmc.python" version="2.24.0"/>
+        <import addon="xbmc.python" version="2.25.0"/>
         <import addon="script.module.pydes" version="2.0.1"/>
         <import addon="script.module.beautifulsoup4" version="4.3.2"/>
         <import addon="script.module.requests" version="2.12.4"/>
