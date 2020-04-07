@@ -12,7 +12,8 @@ import base64
 import uuid
 import time
 import xbmc
-import pyDes
+from Cryptodome.Cipher import DES3
+from Cryptodome.Util.Padding import pad, unpad
 
 class Settings(object):
     """Settings interface for Kodi, includes en-/decryption of credentials"""
@@ -61,13 +62,8 @@ class Settings(object):
         :type data: str
         :returns:  string -- Encoded data
         """
-        key_handle = pyDes.triple_des(
-            self.uniq_id(delay=2),
-            pyDes.CBC,
-            py2_encode("\0\0\0\0\0\0\0\0"),
-            padmode=pyDes.PAD_PKCS5)
-        encrypted = key_handle.encrypt(
-            data=data)
+        key_handle = DES3.new(self.uniq_id(delay=2), DES3.MODE_CBC, iv=b'\0\0\0\0\0\0\0\0')
+        encrypted = key_handle.encrypt(pad(data, DES3.block_size))
         return base64.b64encode(s=encrypted)
 
 
@@ -82,13 +78,8 @@ class Settings(object):
         if data == '':
             return data
 
-        key_handle = pyDes.triple_des(
-            self.uniq_id(delay=2),
-            pyDes.CBC,
-            py2_encode("\0\0\0\0\0\0\0\0"),
-            padmode=pyDes.PAD_PKCS5)
-        decrypted = key_handle.decrypt(
-            data=base64.b64decode(s=data))
+        key_handle = DES3.new(self.uniq_id(delay=2), DES3.MODE_CBC, iv=b'\0\0\0\0\0\0\0\0')
+        decrypted = unpad(key_handle.decrypt(base64.b64decode(s=data)), DES3.block_size)
         return decrypted.decode('utf-8')
 
 
