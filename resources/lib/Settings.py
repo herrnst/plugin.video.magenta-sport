@@ -12,14 +12,7 @@ import base64
 import uuid
 import time
 import xbmc
-
-try:
-    import pyDes
-except ImportError:
-    USE_PYDES = False
-else:
-    USE_PYDES = True
-
+import pyDes
 
 class Settings(object):
     """Settings interface for Kodi, includes en-/decryption of credentials"""
@@ -39,7 +32,6 @@ class Settings(object):
         self.utils = utils
         self.dialogs = dialogs
         self.constants = constants
-        self.use_encryption = USE_PYDES
         self.addon_id = self.constants.get_addon_id()
 
 
@@ -121,13 +113,10 @@ class Settings(object):
         addon = self.utils.get_addon()
         user = self.dialogs.show_email_dialog()
         password = self.dialogs.show_password_dialog()
-        do_encrypt = addon.getSetting('encrypt_credentials')
-        if do_encrypt == 'true' and self.use_encryption is True:
-            _mail = self.encode(user) if user != '' else user
-            _password = self.encode(password) if password != '' else password
-        else:
-            _mail = user
-            _password = password
+
+        _mail = self.encode(user) if user != '' else user
+        _password = self.encode(password) if password != '' else password
+
         addon.setSetting('email', _mail)
         addon.setSetting('password', _password)
         return (user, password)
@@ -142,8 +131,6 @@ class Settings(object):
         addon = self.utils.get_addon()
         user = addon.getSetting('email')
         password = addon.getSetting('password')
-        if '@' in user:
-            return (user, password)
         return (self.decode(user), self.decode(password))
 
 
