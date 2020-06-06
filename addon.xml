@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.magenta-sport" version="1.90.2.10" name="Magenta Sport" provider-name="Maven, Daniel 'herrnst' Scheller">
+<addon id="plugin.video.magenta-sport" version="1.90.2.11" name="Magenta Sport" provider-name="Maven, Daniel 'herrnst' Scheller">
     <requires>
-        <import addon="xbmc.python" version="2.25.0"/>
+        <import addon="xbmc.python" version="2.26.0"/>
         <import addon="script.module.pycryptodome" version="3.4.3"/>
-        <import addon="script.module.beautifulsoup4" version="4.3.2"/>
-        <import addon="script.module.requests" version="2.12.4"/>
-        <import addon="script.module.inputstreamhelper" version="0.3.3"/>
-        <import addon="script.module.kodi-six" version="0.1.0"/>
+        <import addon="script.module.beautifulsoup4" version="4.6.2"/>
+        <import addon="script.module.requests" version="2.22.0"/>
+        <import addon="script.module.inputstreamhelper" version="0.4.7"/>
+        <import addon="script.module.kodi-six" version="0.1.3"/>
     </requires>
     <extension point="xbmc.python.pluginsource" library="addon.py">
         <provides>video</provides>
@@ -20,7 +20,7 @@
             <screenshot>resources\screen_3.png</screenshot>
         </assets>
         <summary lang="de_DE">Magenta Sport</summary>
-        <description lang="de_DE">Magenta Sport ist ein Portal für Live Eishockey, Basketball, 3. Lig, Sky Handball, Sky Bundeliga/Champions-League Konferenzen &amp; Frauenfußball Bundesliga Übertragungen.</description>
+        <description lang="de_DE">Magenta Sport ist ein Portal für Live Eishockey, Basketball, 3. Liga, Sky Handball, Sky Bundeliga/Champions-League Konferenzen &amp; Frauenfußball Bundesliga Übertragungen.</description>
         <disclaimer lang="de_DE">Inoffizielles Addon - Benutzung auf eigene Gefahr. Das Plugin wurde nicht von der Deutschen Telekom beauftragt &amp; bereitgestellt.</disclaimer>
         <summary lang="en_GB">Magenta Sport</summary>
         <description lang="en_GB">Magenta Sport is a portal for live Icehockey, Basketball, German 3rd Ligue, Sky Handball, Sky Bundeliga/Champions-League conferences &amp; womans football matches.</description>
@@ -29,7 +29,6 @@
         <platform>all</platform>
         <license>MIT</license>
         <website>https://www.magentasport.de/</website>
-        <email>janis dot semper at googlemail dot com</email>
-        <source>https://github.com/kodinerds/repo/plugin.video.magenta-sport</source>
+        <source>https://github.com/herrnst/plugin.video.magenta-sport</source>
     </extension>
 </addon>
